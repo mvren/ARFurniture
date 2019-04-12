@@ -1,4 +1,4 @@
-package com.example.arfurniture
+package com.uist.arfurniture
 
 import org.junit.Test
 

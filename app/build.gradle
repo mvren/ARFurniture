@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.arfurniture"
+        applicationId "com.uist.arfurniture"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
@@ -32,4 +32,6 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'com.google.ar:core:1.8.0'
+    implementation 'com.google.android.material:material:1.0.0'
 }
