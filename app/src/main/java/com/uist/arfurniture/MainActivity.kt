@@ -30,6 +30,8 @@ class MainActivity : AppCompatActivity() {
 
         fragment = supportFragmentManager.findFragmentById(R.id.ar_fragment) as ArFragment
 
+        fragment.transformationSystem.apply {  }
+
         floatingActionButton.setOnClickListener {
             addObject(Uri.parse("CHAHIN_WOODEN_CHAIR.sfb"))
         }
@@ -70,6 +72,7 @@ class MainActivity : AppCompatActivity() {
     private fun addNodeToScene(fragment: ArFragment, createAnchor: Anchor, renderable: ModelRenderable) {
         val anchorNode = AnchorNode(createAnchor)
         val transformableNode = TransformableNode(fragment.transformationSystem)
+        transformableNode.scaleController.isEnabled = false
         transformableNode.renderable = renderable
         transformableNode.setParent(anchorNode)
         fragment.arSceneView.scene.addChild(anchorNode)
