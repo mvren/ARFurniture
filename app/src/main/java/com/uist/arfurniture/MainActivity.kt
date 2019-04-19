@@ -10,6 +10,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.ar.core.Anchor
 import com.google.ar.core.ArCoreApk
 import com.google.ar.core.HitResult
@@ -20,6 +21,7 @@ import com.google.ar.sceneform.rendering.Renderable
 import com.google.ar.sceneform.ux.ArFragment
 import com.google.ar.sceneform.ux.TransformableNode
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.categories.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,8 +41,9 @@ class MainActivity : AppCompatActivity() {
         fragment.transformationSystem.apply {  }
 
         floatingActionButton.setOnClickListener{
-            
             root.addView(view,1)
+            recycler_view.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+            recycler_view.adapter = RecyclerAdapter()
         }
 
     }

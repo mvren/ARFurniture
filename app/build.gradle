@@ -47,3 +47,18 @@ sceneform.asset('sampledata/chair/CHAHIN_WOODEN_CHAIR.obj',
         'default',
         'sampledata/chair/CHAHIN_WOODEN_CHAIR.sfa',
         'src/main/assets/CHAHIN_WOODEN_CHAIR')
+
+sceneform.asset('sampledata/couch/couch.obj',
+        'default',
+        'sampledata/couch/couch.sfa',
+        'src/main/assets/couch')
+
+sceneform.asset('sampledata/bed/Bed_01.obj',
+        'default',
+        'sampledata/bed/Bed_01.sfa',
+        'src/main/assets/Bed_01')
+
+sceneform.asset('sampledata/table/Table_Large_Rectangular_01.obj',
+        'default',
+        'sampledata/table/Table_Large_Rectangular_01.sfa',
+        'src/main/assets/Table_Large_Rectangular_01')
