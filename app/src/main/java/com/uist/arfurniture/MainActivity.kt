@@ -5,6 +5,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.widget.Toast
@@ -22,19 +23,26 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+
     lateinit var fragment: ArFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val layoutInflater:LayoutInflater = LayoutInflater.from(applicationContext)
+
+        val view: View = layoutInflater.inflate(R.layout.categories,root,false)
+
         fragment = supportFragmentManager.findFragmentById(R.id.ar_fragment) as ArFragment
 
         fragment.transformationSystem.apply {  }
 
-        floatingActionButton.setOnClickListener {
-            addObject(Uri.parse("CHAHIN_WOODEN_CHAIR.sfb"))
+        floatingActionButton.setOnClickListener{
+            
+            root.addView(view,1)
         }
+
     }
 
     private fun addObject(parse: Uri) {
