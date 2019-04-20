@@ -52,7 +52,6 @@ class MainActivity : AppCompatActivity() {
                 floatingActionButton.setImageResource(android.R.drawable.ic_input_add)
                 openedv=false
             }
-            root.addView(view,1)
             recycler_view.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
             recycler_view.adapter = RecyclerAdapter {model_uri: Uri -> addObject(model_uri)}
         }
