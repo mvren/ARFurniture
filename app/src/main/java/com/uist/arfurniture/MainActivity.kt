@@ -45,10 +45,11 @@ class MainActivity : AppCompatActivity() {
         floatingActionButton.setOnClickListener{
             if(openedv==false) {
                 root.addView(view, 1)
-
+                floatingActionButton.setImageResource(android.R.drawable.ic_delete)
                 openedv = true
             }else{
                 root.removeView(view)
+                floatingActionButton.setImageResource(android.R.drawable.ic_input_add)
                 openedv=false
             }
             root.addView(view,1)
