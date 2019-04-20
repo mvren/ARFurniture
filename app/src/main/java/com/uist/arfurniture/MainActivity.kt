@@ -4,20 +4,17 @@ import android.graphics.Point
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.ar.core.Anchor
-import com.google.ar.core.ArCoreApk
-import com.google.ar.core.HitResult
 import com.google.ar.core.Plane
 import com.google.ar.sceneform.AnchorNode
+import com.google.ar.sceneform.Camera
+import com.google.ar.sceneform.Node
+import com.google.ar.sceneform.Sun
 import com.google.ar.sceneform.rendering.ModelRenderable
-import com.google.ar.sceneform.rendering.Renderable
 import com.google.ar.sceneform.ux.ArFragment
 import com.google.ar.sceneform.ux.TransformableNode
 import kotlinx.android.synthetic.main.activity_main.*
@@ -42,6 +39,12 @@ class MainActivity : AppCompatActivity() {
 
         fragment.transformationSystem.apply {  }
 
+
+        remove_fab.setOnClickListener {
+            fragment.transformationSystem.selectedNode?.parent?.let { it1 -> removeAnchorNode(it1) }
+        }
+
+
         floatingActionButton.setOnClickListener{
             if(openedv==false) {
                 root.addView(view, 1)
@@ -56,6 +59,18 @@ class MainActivity : AppCompatActivity() {
             recycler_view.adapter = RecyclerAdapter {model_uri: Uri -> addObject(model_uri)}
         }
 
+    }
+
+    private fun removeAnchorNode(nodeRemove: Node) {
+        if (nodeRemove is AnchorNode) {
+            if (nodeRemove.anchor != null) {
+                nodeRemove.anchor!!.detach()
+            }
+        }
+
+        if (nodeRemove !is Camera && nodeRemove !is Sun) {
+            nodeRemove.setParent(null)
+        }
     }
 
     private fun addObject(parse: Uri) {
@@ -100,7 +115,7 @@ class MainActivity : AppCompatActivity() {
         transformableNode.select()
     }
 
-    private fun getScreenCenter(): android.graphics.Point {
+    private fun getScreenCenter(): Point {
         val vw = findViewById<View>(android.R.id.content)
         return Point(vw.width / 2, vw.height / 2)
     }
