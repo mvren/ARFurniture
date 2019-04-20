@@ -25,6 +25,8 @@ import kotlinx.android.synthetic.main.categories.*
 
 class MainActivity : AppCompatActivity() {
 
+    private var openedv: Boolean = false
+
 
     lateinit var fragment: ArFragment
 
@@ -41,6 +43,15 @@ class MainActivity : AppCompatActivity() {
         fragment.transformationSystem.apply {  }
 
         floatingActionButton.setOnClickListener{
+            if(openedv==false) {
+                root.addView(view, 1)
+                floatingActionButton.setImageResource(android.R.drawable.ic_delete)
+                openedv = true
+            }else{
+                root.removeView(view)
+                floatingActionButton.setImageResource(android.R.drawable.ic_input_add)
+                openedv=false
+            }
             root.addView(view,1)
             recycler_view.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
             recycler_view.adapter = RecyclerAdapter {model_uri: Uri -> addObject(model_uri)}
