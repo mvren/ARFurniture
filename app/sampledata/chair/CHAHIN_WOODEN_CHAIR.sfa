@@ -37,7 +37,7 @@
     file: 'sampledata/chair/CHAHIN_WOODEN_CHAIR.obj',
     name: 'CHAHIN_WOODEN_CHAIR',
     recenter: 'root',
-    scale: 0.35,
+    scale: 0.37,
   },
   samplers: [
     {

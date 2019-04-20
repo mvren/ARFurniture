@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:clickable="true" app:srcCompat="@android:drawable/ic_input_add"
             android:id="@+id/floatingActionButton" app:backgroundTint="@color/colorPrimary"
-            android:tint="@color/colorPrimaryDark" app:layout_constraintEnd_toEndOf="parent"
+            android:tint="@color/colorAccent" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="16dp" android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent" android:focusable="true"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

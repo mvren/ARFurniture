@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         floatingActionButton.setOnClickListener{
             root.addView(view,1)
             recycler_view.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-            recycler_view.adapter = RecyclerAdapter()
+            recycler_view.adapter = RecyclerAdapter {model_uri: Uri -> addObject(model_uri)}
         }
 
     }

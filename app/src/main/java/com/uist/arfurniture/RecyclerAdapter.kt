@@ -1,24 +1,27 @@
 package com.uist.arfurniture
 
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.icon_layout.view.*
 
-class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+class RecyclerAdapter (private val clickListener: (Uri) -> Unit) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 
     private val count = 4
 
     private val names = arrayOf("Chair","Table","Couch","Bed")
-    private val models = arrayOf("VHAHIN_WOODEN_CHAIR.sfb","Table_Large_Rectangular_01.sfb","couch.sfb","Bed_01.sfb")
+    private val models = arrayOf("CHAHIN_WOODEN_CHAIR.sfb","Table_Large_Rectangular_01.sfb","couch.sfb","Bed_01.sfb")
     private val imgs = arrayOf(R.drawable.abc_btn_check_material,R.drawable.abc_btn_check_material,R.drawable.abc_btn_check_material,R.drawable.abc_btn_check_material)
 
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        var item_img: ImageView = itemView.findViewById(R.id.image)
-        var item_name: TextView = itemView.findViewById(R.id.image_text)
+        var item_img: ImageView = itemView.image
+        var item_name: TextView = itemView.image_text
+
     }
 
 
@@ -34,5 +37,6 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.item_name.text = names[position]
         holder.item_img.setImageResource(imgs[position])
+        holder.item_img.setOnClickListener { clickListener(Uri.parse(models[position]))}
     }
 }
