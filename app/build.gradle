@@ -62,3 +62,8 @@ sceneform.asset('sampledata/table/Table_Large_Rectangular_01.obj',
         'default',
         'sampledata/table/Table_Large_Rectangular_01.sfa',
         'src/main/assets/Table_Large_Rectangular_01')
+
+sceneform.asset('sampledata/masa/masa.obj',
+        'default',
+        'sampledata/masa/masa.sfa',
+        'src/main/assets/masa')
