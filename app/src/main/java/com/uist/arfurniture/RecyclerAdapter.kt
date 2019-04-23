@@ -14,7 +14,7 @@ class RecyclerAdapter (private val clickListener: (Uri) -> Unit) : RecyclerView.
     private val count = 4
 
     private val names = arrayOf("Chair","Table","Couch","Bed")
-    private val models = arrayOf("CHAHIN_WOODEN_CHAIR.sfb","masa.sfb","couch.sfb","Bed_01.sfb")
+    private val models = arrayOf("chair.sfb","masa.sfb","couch.sfb","Bed_01.sfb")
     private val imgs = arrayOf(R.drawable.abc_btn_check_material,R.drawable.abc_btn_check_material,R.drawable.abc_btn_check_material,R.drawable.abc_btn_check_material)
 
 

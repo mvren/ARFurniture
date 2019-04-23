@@ -67,3 +67,9 @@ sceneform.asset('sampledata/masa/masa.obj',
         'default',
         'sampledata/masa/masa.sfa',
         'src/main/assets/masa')
+
+
+sceneform.asset('sampledata/chair/chair.obj',
+        'default',
+        'sampledata/chair/chair.sfa',
+        'src/main/assets/chair')
