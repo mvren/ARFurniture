@@ -15,7 +15,7 @@ class RecyclerAdapter (private val clickListener: (Uri) -> Unit) : RecyclerView.
 
     private val names = arrayOf("Chair","Table","Couch","Bed")
     private val models = arrayOf("chair.sfb","masa.sfb","couch.sfb","Bed_01.sfb")
-    private val imgs = arrayOf(R.drawable.abc_btn_check_material,R.drawable.abc_btn_check_material,R.drawable.abc_btn_check_material,R.drawable.abc_btn_check_material)
+    private val imgs = arrayOf(R.drawable.ic_chair,R.drawable.ic_table,R.drawable.ic_sofa,R.drawable.ic_bed)
 
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
